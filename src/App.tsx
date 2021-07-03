@@ -15,6 +15,7 @@ import { HelloTwoCube } from './components/HelloTwoCube';
 import { HelloGLTF } from './components/HelloGLTF';
 import { HelloObj } from './components/HelloObj';
 import { HelloFBXOne, HelloFBXTwo } from './components/HelloFBX';
+import { HelloTexture } from './components/HelloTexture';
 
 function Loader() {
   const { progress } = useProgress();
@@ -31,19 +32,20 @@ function App() {
           gl.shadowMap.type = PCFSoftShadowMap;
         }}
       >
-        <ambientLight intensity={0.5}></ambientLight>
-        <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1}></spotLight>
-        <pointLight position={[-10, -10, -10]}></pointLight>
-        {/* <HelloCube></HelloCube> */}
-        {/* <HelloClickScale></HelloClickScale> */}
-        {/* <HelloTwoCube></HelloTwoCube> */}
+        <ambientLight intensity={0.5} />
+        <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+        <pointLight position={[-10, -10, -10]} />
+        {/* <HelloCube /> */}
+        {/* <HelloClickScale /> */}
+        {/* <HelloTwoCube /> */}
         <Suspense fallback={<Loader />}>
           <OrbitControls />
           <Environment preset="sunset" background />
-          {/* <HelloGLTF></HelloGLTF> */}
-          <HelloObj></HelloObj>
-          {/* <HelloFBXOne></HelloFBXOne> */}
-          {/* <HelloFBXTwo></HelloFBXTwo> */}
+          {/* <HelloGLTF /> */}
+          {/* <HelloObj /> */}
+          {/* <HelloFBXOne /> */}
+          {/* <HelloFBXTwo /> */}
+          <HelloTexture />
         </Suspense>
       </Canvas>
     </div>
