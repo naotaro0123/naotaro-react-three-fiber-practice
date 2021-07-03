@@ -20,10 +20,8 @@ export const HelloCube = () => {
       <boxBufferGeometry
         attach="geometry"
         args={[4, 4, 4]}
-      >
-      </boxBufferGeometry>
-      <meshNormalMaterial attach="material">
-      </meshNormalMaterial>
+      />
+      <meshNormalMaterial attach="material" />
     </mesh>
   )
 }
