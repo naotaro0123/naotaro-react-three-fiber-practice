@@ -16,6 +16,7 @@ import { HelloGLTF } from './components/HelloGLTF';
 import { HelloObj } from './components/HelloObj';
 import { HelloFBXOne, HelloFBXTwo } from './components/HelloFBX';
 import { HelloTexture } from './components/HelloTexture';
+import { HelloSpring } from './components/HelloSpring';
 
 function Loader() {
   const { progress } = useProgress();
@@ -45,7 +46,8 @@ function App() {
           {/* <HelloObj /> */}
           {/* <HelloFBXOne /> */}
           {/* <HelloFBXTwo /> */}
-          <HelloTexture />
+          {/* <HelloTexture /> */}
+          <HelloSpring />
         </Suspense>
       </Canvas>
     </div>
