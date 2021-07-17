@@ -55,11 +55,11 @@ function App() {
           gl.shadowMap.type = PCFSoftShadowMap;
         }}
       >
-        <Html>
-          <div className="gui-content">
-            cube number: { cubes.length }
-          </div>
-        </Html>
+          <Html>
+            <div className="gui-content">
+              cube number: { cubes.length }
+            </div>
+          </Html>
         <color attach="background" args={['black']} />
         <ambientLight intensity={0.5} />
         <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />

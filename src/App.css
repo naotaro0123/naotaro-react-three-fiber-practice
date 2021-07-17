@@ -6,7 +6,10 @@
 .gui-content {
   background: #fff;
   color: grey;
-  padding: 10px 15px;
+  padding: 8px;
+  width: 200px;
   border-radius: 5px;
-  top: 50px;
+  position: absolute;
+  top: -330px;
+  left: -100px;
 }
