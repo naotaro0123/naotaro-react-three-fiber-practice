@@ -76,9 +76,7 @@ export default function SubApp() {
         </Rotate> */}
         <group position={[0, -1, 0]}>
           <Suspense fallback={null}>
-            <Model pose={4} position={[0, 0, 0]} />
-            <Model pose={1} position={[1, 0, -1]} />
-            <Model pose={2} position={[-1, 0, -1]} />
+            <Model pose={0} position={[0, 0, 0]} />
           </Suspense>
         </group>
       </Canvas>

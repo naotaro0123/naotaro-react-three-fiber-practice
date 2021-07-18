@@ -6,7 +6,7 @@ import { SkeletonUtils } from 'three/examples/jsm/utils/SkeletonUtils';
 
 type ExtendModel = { pose: number } & GroupProps;
 export const Model = ({ pose, ...props }: ExtendModel) => {
-  const { scene, animations } = useGLTF('./stacy.glb');
+  const { scene, animations } = useGLTF('./kick.glb');
   const clone = useMemo(() => SkeletonUtils.clone(scene), [scene]);
   const { nodes } = useGraph(clone) as any;
   const texture = useTexture('./stacy.jpg');
@@ -22,7 +22,8 @@ export const Model = ({ pose, ...props }: ExtendModel) => {
     [hovered],
   );
   useEffect(() => {
-    console.log(actions, names[index])
+  // console.log(nodes)
+  console.log(actions, names[index])
     actions[names[index]]?.reset().fadeIn(0.5).play();
     // actions[names[index]]?.fadeOut(0.5);
   }, [index, actions, names]);
@@ -40,8 +41,8 @@ export const Model = ({ pose, ...props }: ExtendModel) => {
         <skinnedMesh
           castShadow
           receiveShadow
-          geometry={nodes.stacy.geometry}
-          skeleton={nodes.stacy.skeleton}
+          geometry={nodes.Alpha_Joints.geometry}
+          skeleton={nodes.Alpha_Joints.skeleton}
           rotation={[-Math.PI / 2, 0, 0]}
           scale={[100, 100, 100]}
         >
