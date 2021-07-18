@@ -1,9 +1,9 @@
 import { useRef } from 'react';
-import { useFrame } from '@react-three/fiber';
-import { Object3D } from 'three';
+import { MeshProps, useFrame } from '@react-three/fiber';
+import { Mesh } from 'three';
 
-export const HelloCube = () => {
-  const ref = useRef<Object3D>();
+export const HelloCube = (props: MeshProps) => {
+  const ref = useRef<Mesh>();
   useFrame(() => {
     if (ref.current) {
       const currentRotation = ref.current.rotation;
@@ -12,6 +12,7 @@ export const HelloCube = () => {
   });
   return (
     <mesh
+      {...props}
       ref={ref}
       onClick={(e) => console.log('click', e)}
       onPointerOver={(e) => console.log('hover', e)}

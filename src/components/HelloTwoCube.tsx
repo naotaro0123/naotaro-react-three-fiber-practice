@@ -3,19 +3,19 @@ import { useRef, useState } from 'react';
 import { Mesh } from 'three';
 
 const Box = (props: MeshProps) => {
-  const mesh = useRef<Mesh>();
+  const ref = useRef<Mesh>();
   const [hovered, setHover] = useState(false);
   const [active, setActive] = useState(false);
 
   useFrame(() => {
-    if (mesh.current) {
-      mesh.current.rotation.x = mesh.current.rotation.y += 0.01;
+    if (ref.current) {
+      ref.current.rotation.x = ref.current.rotation.y += 0.01;
     }
   });
   return (
     <mesh
       {...props}
-      ref={mesh}
+      ref={ref}
       scale={active ? 1.5 : 1}
       onClick={() => setActive(!active)}
       onPointerOver={() => setHover(true)}
