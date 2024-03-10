@@ -4,7 +4,7 @@ import { useSpring, animated, config } from '@react-spring/three';
 import { useFrame } from '@react-three/fiber';
 
 export const HelloSpring = () => {
-  const mesh = useRef<Mesh>();
+  const mesh = useRef<Mesh>(null);
   const [active, setActive] = useState(false);
 
   const { scale } = useSpring({
@@ -19,13 +19,9 @@ export const HelloSpring = () => {
     }
   });
   return (
-    <animated.mesh
-      scale={scale}
-      onClick={() => setActive(!active)}
-      ref={mesh}
-    >
-      <boxBufferGeometry />
+    <animated.mesh scale={scale} onClick={() => setActive(!active)} ref={mesh}>
+      <boxGeometry />
       <meshPhongMaterial color="royalblue" />
     </animated.mesh>
-  )
-}
+  );
+};

@@ -3,7 +3,7 @@ import { MeshProps, useFrame } from '@react-three/fiber';
 import { Mesh } from 'three';
 
 export const HelloCube = (props: MeshProps) => {
-  const ref = useRef<Mesh>();
+  const ref = useRef<Mesh>(null);
   useFrame(() => {
     if (ref.current) {
       const currentRotation = ref.current.rotation;
@@ -18,11 +18,8 @@ export const HelloCube = (props: MeshProps) => {
       onPointerOver={(e) => console.log('hover', e)}
       onPointerOut={(e) => console.log('no-hover', e)}
     >
-      <boxBufferGeometry
-        attach="geometry"
-        args={[4, 4, 4]}
-      />
+      <boxGeometry attach="geometry" args={[4, 4, 4]} />
       <meshNormalMaterial attach="material" />
     </mesh>
-  )
-}
+  );
+};

@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import { Mesh } from 'three';
 
 const Box = (props: MeshProps) => {
-  const ref = useRef<Mesh>();
+  const ref = useRef<Mesh>(null);
   const [hovered, setHover] = useState(false);
   const [active, setActive] = useState(false);
 
@@ -24,8 +24,8 @@ const Box = (props: MeshProps) => {
       <boxGeometry args={[3, 3, 3]} />
       <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
     </mesh>
-  )
-}
+  );
+};
 
 export const HelloTwoCube = () => {
   return (
@@ -33,5 +33,5 @@ export const HelloTwoCube = () => {
       <Box position={[-4.0, 0, 0]} />
       <Box position={[4.0, 0, 0]} />
     </>
-  )
-}
+  );
+};
